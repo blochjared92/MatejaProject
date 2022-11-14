@@ -115,7 +115,8 @@ class Game:
             self.actions[n%2].recieveAction(action)
             state_new = agent.getState(player, self.board.board)
             # TODO: Choose a better reward system
-            reward = player.possibleRent() #Calculates the reward 
+            if state_new[0] > state_old[1]:
+                reward = state_new[0] #Calculates the reward 
             
             agent.train_short_memory(state_old, action, reward, state_new, done)
             agent.remember(state_old, action, reward, state_new, done)
