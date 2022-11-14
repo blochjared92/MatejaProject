@@ -117,7 +117,8 @@ class Game:
             # TODO: Choose a better reward system
             if state_new[0] > state_old[1]:
                 reward = state_new[0] #Calculates the reward 
-            
+            else:
+                reward = player.possibleRent()
             agent.train_short_memory(state_old, action, reward, state_new, done)
             agent.remember(state_old, action, reward, state_new, done)
         return done
