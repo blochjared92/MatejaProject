@@ -25,7 +25,7 @@ class Game:
         """
         Intializes the Monopoly game.
         """
-        self.window = pygame.display.set_mode((self.WIDTH, self.HEIGHT))
+        #self.window = pygame.display.set_mode((self.WIDTH, self.HEIGHT))
 
         #Banks probably predate the world
 
@@ -36,10 +36,11 @@ class Game:
         """
         Draws game onto the window.
         """
-        self.board.draw(self.window)
+        #self.board.draw(self.window)
 
 
-        pygame.display.update()
+        #pygame.display.update()
+        pass
     
     def drawPlayers(self):
         
