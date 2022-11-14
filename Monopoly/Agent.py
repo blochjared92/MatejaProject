@@ -25,8 +25,12 @@ class Agent(Player):
         #IMPORTANT IF STATE SIZE IS N THEN QNET INPUT MUST BE N
         # TODO: Create a better state
         # TODO: Use pruning in the future to find the optimal state(Do not worry about it for now)
-        state = [player.worth, player.position[0], player.position[1], tile.group]
         
+       `#Possible Idea -> Greed: Buys everything it can, trades nothing (unless passes possible threshold), buys houses, mortgages when need to.
+        
+        state = [player.worth, player.position[0], player.position[1], tile.group,len(player.properties),player.bank,player.possibleMortgages(),
+                 player.sellableHouses(),player.sellableHotels()]
+
         return np.array(state, dtype = int)
     """
     Gets actions based on either randomly picking an action or from model predictions
